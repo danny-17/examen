@@ -104,4 +104,12 @@
         android:text="@string/btn_guarda"
         android:textSize="24sp" />
 
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabEditar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:src="@drawable/ic_edit_24"
+         />
+
 </LinearLayout>

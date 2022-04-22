@@ -93,7 +93,7 @@ public class DbProvedor extends DbHelper{
         return provedor;
     }
 
-    public boolean editarProvedor(int ruc,String nombre_comercial, String representante_legal, String direccion,String telefono, String productos,int credito){
+    public boolean editarProvedor(int ruc, String nombre_comercial, String representante_legal, String direccion, String telefono, String productos){
 
         boolean correcto = false;
         DbHelper dbHelper = new DbHelper(context);

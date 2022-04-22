@@ -11,12 +11,13 @@ import android.widget.EditText;
 
 import com.example.examen.bd.DbProvedor;
 import com.example.examen.entidades.Provedor;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class VerActivity extends AppCompatActivity {
 
     EditText txtNombre, txtRepresentante, txtDireccion, txtTelefono, txtPoductos, txtCredito;
     Button btnGuarda;
-
+    FloatingActionButton fabEditar;
     Provedor provedor;
     int ruc = 0;
 
@@ -34,6 +35,7 @@ public class VerActivity extends AppCompatActivity {
         txtCredito=findViewById(R.id.txtCredito);
 
         btnGuarda=findViewById(R.id.btnGuardar);
+        fabEditar=findViewById(R.id.fabEditar);
 
         if(savedInstanceState==null){
             Bundle extras = getIntent().getExtras();
@@ -67,5 +69,15 @@ public class VerActivity extends AppCompatActivity {
             txtPoductos.setInputType(InputType.TYPE_NULL);
 
         }
+
+        fabEditar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(VerActivity.this, EditarActivity.class);
+                intent.putExtra("RUC", ruc);
+                startActivity(intent);
+            }
+        });
+
     }
 }
